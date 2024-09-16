@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "django-with-strawberry-graphql"
+version = "0.1.0"
+description = "Django with strawberry graphql"
+authors = ["Aaron Pan <aaron09720@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.1"
+uvicorn = "^0.30.6"
+strawberry-graphql-django = "^0.47.2"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "0.6.4"
+pytest = "^8.3.2"
+pre-commit = "^3.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+requires-python = ">=3.12"
+
+[tool.ruff]  # https://docs.astral.sh/ruff/settings/#top-level
+line-length = 100
+exclude = ["**/migrations/", "**/manage.py"]
+
+[tool.ruff.lint]  # https://docs.astral.sh/ruff/settings/#lint
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+]
+
